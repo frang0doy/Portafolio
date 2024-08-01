@@ -39,3 +39,52 @@ function efectoHabilidades() {
 window.onscroll = function () {
    efectoHabilidades();
 };
+
+document
+   .getElementById("contact-form")
+   .addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const form = event.target;
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+         method: "POST",
+         body: formData,
+         headers: {
+            Accept: "application/json",
+         },
+      })
+         .then((response) => {
+            const messageElement = document.getElementById("form-messages");
+            if (response.ok) {
+               messageElement.innerText = "Mensaje enviado correctamente.";
+               messageElement.classList.add("success", "show");
+               form.reset();
+            } else {
+               response.json().then((data) => {
+                  if (data.errors) {
+                     messageElement.innerText = data.errors
+                        .map((error) => error.message)
+                        .join(", ");
+                  } else {
+                     messageElement.innerText =
+                        "Hubo un problema al enviar el formulario.";
+                  }
+                  messageElement.classList.add("error", "show");
+               });
+            }
+            setTimeout(() => {
+               messageElement.classList.remove("show");
+            }, 5000); // Oculta el mensaje después de 5 segundos
+         })
+         .catch((error) => {
+            const messageElement = document.getElementById("form-messages");
+            messageElement.innerText =
+               "Hubo un problema al enviar el formulario.";
+            messageElement.classList.add("error", "show");
+            setTimeout(() => {
+               messageElement.classList.remove("show");
+            }, 5000); // Oculta el mensaje después de 5 segundos
+         });
+   });

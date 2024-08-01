@@ -506,39 +506,39 @@ html {
    position: relative;
    bottom: 4px;
 }
-/* SECCION PORTFOLIO */
-.portfolio {
+/* SECCION PROYECTOS */
+.proyectos {
    background-color: #252a2e;
    color: #fff;
    padding: 50px 20px;
 }
-.portfolio .contenido-seccion {
+.proyectos .contenido-seccion {
    max-width: 1100px;
    margin: auto;
 }
-.portfolio h2 {
+.proyectos h2 {
    font-size: 48px;
    font-family: "Righteous";
    text-align: center;
    padding: 20px 0;
 }
-.portfolio .galeria {
+.proyectos .galeria {
    display: flex;
    flex-wrap: wrap;
    justify-content: space-around;
 }
-.portfolio .galeria .proyecto {
+.proyectos .galeria .proyecto {
    position: relative;
    max-width: 340px;
    height: fit-content;
    margin: 10px;
    cursor: pointer;
 }
-.portfolio .galeria .proyecto img {
+.proyectos .galeria .proyecto img {
    width: 100%;
    display: block;
 }
-.portfolio .galeria .proyecto .overlay {
+.proyectos .galeria .proyecto .overlay {
    position: absolute;
    top: 0;
    width: 100%;
@@ -556,41 +556,50 @@ html {
    letter-spacing: 3px;
    opacity: 0;
 }
-.portfolio .galeria .proyecto .overlay h3 {
+.proyectos .galeria .proyecto .overlay h3 {
    margin-bottom: 20px;
    transition: 1s;
 }
-.portfolio .galeria .proyecto .overlay:hover {
+.proyectos .galeria .proyecto .overlay:hover {
    opacity: 1;
 }
-.portfolio .galeria .proyecto .overlay:hover h3 {
+.proyectos .galeria .proyecto .overlay:hover h3 {
    margin-bottom: 0px;
 }
 /* SECCION CONTACTO */
+/* Estilos para la sección de contacto */
+/* Estilos para la sección de contacto */
 .contacto {
    background-image: url(img/contact_bg.png);
    background-color: #1e2326;
    color: #fff;
    padding: 50px 0;
 }
+
 .contacto .contenido-seccion {
    max-width: 1100px;
    margin: auto;
 }
+
 .contacto h2 {
    font-size: 48px;
    font-family: "Righteous";
    text-align: center;
    padding: 20px 0;
 }
+
 .contacto .fila {
    display: flex;
+   justify-content: center;
+   align-items: flex-start; /* Alinea los elementos en la parte superior */
 }
+
 .contacto .col {
    width: 50%;
    padding: 10px;
    position: relative;
 }
+
 .contacto .col input,
 .contacto .col textarea {
    display: block;
@@ -602,6 +611,7 @@ html {
    color: #fff;
    font-size: 18px;
 }
+
 .contacto button {
    cursor: pointer;
    background-color: transparent;
@@ -615,6 +625,7 @@ html {
    position: relative;
    z-index: 10;
 }
+
 .contacto button .overlay {
    position: absolute;
    top: 0;
@@ -625,12 +636,15 @@ html {
    z-index: -1;
    transition: 1s;
 }
+
 .contacto button:hover .overlay {
    width: 100%;
 }
+
 .contacto .col img {
    width: 100%;
 }
+
 .contacto .col .info {
    position: absolute;
    top: 40%;
@@ -640,17 +654,57 @@ html {
    left: 50%;
    transform: translate(-50%, -50%);
 }
+
 .contacto .col .info ul {
    list-style: none;
 }
+
 .contacto .col .info ul li {
    margin-bottom: 20px;
 }
+
 .contacto .col .info ul li i {
    color: #1cb698;
    display: inline-block;
    margin-right: 20px;
 }
+
+/* Estilos para el mensaje de confirmación */
+#form-messages {
+   padding: 10px;
+   border-radius: 5px;
+   display: none;
+   margin-left: 20px;
+   width: 50%; /* Ajusta el ancho según sea necesario */
+}
+
+#form-messages.success {
+   background-color: #d4edda;
+   color: #155724;
+   border: 1px solid #c3e6cb;
+}
+
+#form-messages.error {
+   background-color: #f8d7da;
+   color: #721c24;
+   border: 1px solid #f5c6cb;
+}
+
+/* Animación para el mensaje de confirmación */
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+}
+
+#form-messages.show {
+   display: block;
+   animation: fadeIn 1s;
+}
+
 footer {
    background-color: #252a2e;
    color: #fff;
