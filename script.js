@@ -40,6 +40,30 @@ window.onscroll = function () {
    efectoHabilidades();
 };
 
+const proyectos = [
+   {
+     titulo: "Proto Nature",
+     descripcion: "Un e-commerce innovador con una experiencia de usuario fluida.",
+     link: "https://proto-nature.vercel.app/"
+   },
+   {
+     titulo: "Widget Climático",
+     descripcion: "Una aplicación para consultar el clima de forma rápida y sencilla.",
+     link: "https://widget-git-master-frang0doys-projects.vercel.app/"
+   }
+ ];
+
+ function mostrarDescripcion(index) {
+   document.getElementById("modal-title").textContent = proyectos[index].titulo;
+   document.getElementById("modal-description").textContent = proyectos[index].descripcion;
+   document.getElementById("modal-link").href = proyectos[index].link;
+   document.getElementById("modal").style.display = "flex";
+ }
+
+ function cerrarDescripcion() {
+   document.getElementById("modal").style.display = "none";
+ }
+
 document
    .getElementById("contact-form")
    .addEventListener("submit", function (event) {
@@ -88,3 +112,5 @@ document
             }, 5000); // Oculta el mensaje después de 5 segundos
          });
    });
+
+

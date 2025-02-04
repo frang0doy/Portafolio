@@ -84,7 +84,7 @@
          <div class="contenido-seccion">
             <h2>Sobre Mí</h2>
             <p>
-               <span>Soy Francisco Godoy.</span> Tengo 23 años, soy técnico
+               <span>Soy Francisco Godoy.</span> Tengo 24 años, soy técnico
                superior en programación y desarrollador NET/C#,JavaScript, React
                y SQL Server. Trabajo en proyectos propios, para seguir
                capacitándome y seguir sumando conocimientos. Me defino como una
@@ -108,7 +108,7 @@
 
                      <li>
                         <strong>Dirección</strong>
-                        La plata, Buenos aires
+                         Buenos aires , capital federal 
                      </li>
                      <li>
                         <strong>Cargo</strong>
@@ -301,33 +301,34 @@
       <!-- SECCION PROYECTOS -->
       <section id="proyectos" class="proyectos">
          <div class="contenido-seccion">
-            <h2>PROYECTOS</h2>
-            <div class="galeria">
-               <div class="proyecto">
-                  <img src="img/Screenshot 2025-01-25 at 09-08-13 ProtoNature.png" alt="Proto Nature" />
-                  <div class="overlay">
-                     <a href="https://proto-nature.vercel.app/" target="_blank">
-                        <p><u>E-Commerse</u></p>
-                     </a>
-                  </div>
-               </div> 
-               <div class="proyecto">
-                  <img src="./img/p7.png" alt="Widget climatico" />
-                  <div class="overlay">
-                     <a
-                        href="https://widget-git-master-frang0doys-projects.vercel.app/"
-                        target="_blank"
-                     >
-                        <p><u>App</u></p>
-                     </a>
-                  </div>
+           <h2>PROYECTOS</h2>
+           <div class="galeria">
+             <div class="proyecto" onclick="mostrarDescripcion(0)">
+               <img src="img/Screenshot-2025-01-25.png" alt="Proto Nature" />
+               <div class="overlay">
+                 <p><u>E-Commerce</u></p>
                </div>
-            </div>
-            <!-- Cerrando la galería correctamente -->
+             </div>
+             <div class="proyecto" onclick="mostrarDescripcion(1)">
+               <img src="./img/p7.png" alt="Widget Climático" />
+               <div class="overlay">
+                 <p><u>App</u></p>
+               </div>
+             </div>
+           </div>
          </div>
-
-         <!-- Cerrando contenido-sección correctamente -->
-      </section>
+       
+         <!-- Modal para Descripción -->
+         <div id="modal" class="modal">
+           <div class="modal-content">
+             <span class="close" onclick="cerrarDescripcion()">&times;</span>
+             <h3 id="modal-title"></h3>
+             <p id="modal-description"></p>
+             <a id="modal-link" href="#" target="_blank" class="btn">Ver Proyecto</a>
+           </div>
+         </div>
+       </section>
+       
 
       <section id="contacto" class="contacto">
          <div class="contenido-seccion">
